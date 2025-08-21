@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirigiendo... / Redirecting... / Redirection... / Weiterleitung...</title>
   <style>
     body {
@@ -13,6 +14,8 @@
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
+      font-size: 16px;
+      padding: 10px;
     }
     .box {
       background-color: #3a3a3a;
@@ -22,11 +25,13 @@
       max-width: 500px;
       width: 100%;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      border: 1px solid #616161;
+      border-top: 7px solid #ffcc00;
     }
     #countdown {
       font-size: 1.2em;
       margin-bottom: 15px;
-      color: #ffcc00;
+      color: #929292;
     }
     a:link,
     a:visited {
@@ -36,14 +41,32 @@
     a:hover {
       text-decoration: underline;
     }
+    @media (max-width: 600px) {
+      body {
+        font-size: 18px;
+      }
+      .box {
+        padding: 25px 20px;
+      }
+      #countdown {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-size: 1.6em;
+      }
+      p {
+        font-size: 1.1em;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="box">
     <h1>Redirecting to Official Taxi...</h1>
-    <div id="countdown">Redirigiendo en 3 segundos...</div>
-    <p>Si no eres redirigido automáticamente, <a href="https://www.officialtaxitenerife.com/">haz clic aquí</a>.</p>
+    <div id="countdown">Redirecting in 3 seconds...</div>
     <p>If you are not redirected automatically, <a href="https://www.officialtaxitenerife.com/">click here</a>.</p>
+    <p>Si no eres redirigido automáticamente, <a href="https://www.officialtaxitenerife.com/">haz clic aquí</a>.</p>
     <p>Si vous n'êtes pas redirigé automatiquement, <a href="https://www.officialtaxitenerife.com/">cliquez ici</a>.</p>
     <p>Wenn Sie nicht automatisch weitergeleitet werden, <a href="https://www.officialtaxitenerife.com/">klicken Sie hier</a>.</p>
   </div>
@@ -53,7 +76,7 @@
     const interval = setInterval(() => {
       seconds--;
       if (seconds > 0) {
-        countdownEl.textContent = `Redirigiendo en ${seconds} segundos...`;
+        countdownEl.textContent = `Redirecting in ${seconds} seconds...`;
       } else {
         clearInterval(interval);
         window.location.href = "https://www.officialtaxitenerife.com/";
